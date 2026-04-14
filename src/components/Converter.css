@@ -1,0 +1,57 @@
+.converter-box { /*classe*/
+    /*borda*/
+    padding: 30px;   /*espaço entre o conteudo e a borda*/
+    border-style: solid; /*estilo da borda*/
+    border-color: #000000; /*cor da borda*/
+    border-width: 5px 5px 5px 5px; /*largura da borda: topo direita baixo esquerda*/
+    border-radius: 5px; /*raio da borda*/
+    box-shadow: 0 5px 5px rgba(29, 28, 28, 0.1);
+
+    /*caixa*/
+    width: 50%; /*faz a caixa ocupar metade da largura da tela */
+    height: 50%; /*altura da caixa */
+    align-self: center;
+    margin-top: 5px; /*espaço acima da caixa*/
+
+    /*elementos da caixa*/
+    display: flex; /*exibe os elementos em linha ou coluna*/
+    flex-direction: column; /*alinha os elementos em coluna*/
+    align-items: center; /*alinha os itens ao centro*/
+
+    /*fundo*/
+    background-color: rgb(180, 182, 181);
+}
+
+body{ /*elemento pai (tela)*/
+    display: flex;
+    justify-content: center; /*alinha os elementos ao centro horizontalmente*/
+    align-items: top; /*alinha os elementos ao topo verticalmente*/
+    height: 100vh; /*altura da tela (viewport)*/
+    margin: 0; /*remove a margem padrão do body*/
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: nome;
+    margin: 0;
+}
+
+.input-amount {
+    padding: 5px; /*espaço interno do input*/
+    width: 50px; /*largura do input*/
+    border: 1px solid #000000; /*borda do input*/
+    /*border-radius: 1px; /*raio da borda do input*/
+    margin-bottom: 5px; /*espaço abaixo do input*/
+    text-align: center;
+}
+
+.select-currencies
+{
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+.titulo{
+    color: #000000;
+    font-style: italic;
+}

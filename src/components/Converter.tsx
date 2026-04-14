@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getRates } from "../services/currencyService";
-import { resume } from "react-dom/server";
+import "./Converter.css";
+
 
 export default function Converter() {
     const [amount, setAmount] = useState(1);
@@ -23,21 +24,22 @@ export default function Converter() {
     };
 
     return ( //tudo dentro do return é JSX(HTML + JS)
-        <div>
-            <h2>Conversor de Moedas</h2>
+        <div className="converter-box">
+            <h2 className="titulo">Conversor de Moedas</h2>
             <input
+                className="input-amount"
                 type="number"
                 value={amount}
                 onChange={(e) => setAmount(Number(e.target.value))}
             ></input>
 
-            <select value={fromCurrency} onChange={(e) => setFromCurrency(e.target.value)}>
+            <select className="select-currencies" value={fromCurrency} onChange={(e) => setFromCurrency(e.target.value)}>
                 {currencies.map((c) => (
                     <option key={c} value={c}>{c}</option>
                 ))}
             </select>
 
-            <select value={toCurrency} onChange={(e) => setToCurrency(e.target.value)}>
+            <select className="select-currencies" value={toCurrency} onChange={(e) => setToCurrency(e.target.value)}>
                 {currencies.map((c) => (
                     <option key={c} value={c}>
                         {c}
@@ -97,9 +99,10 @@ criando o return do JSX:
     criando o select de moeda base:
         o valor do select é controlado pela variável fromCurrency
         quando o evento onChange ocorre, atualiza o estado fromCurrency com o valor selecionado com e.target.value
-        para listar as opções do select, o metodo map é chamado para criar um option para cada item do array currencies
+        para listar as opções do select, o metodo map é chamado para criar um option para cada item do array currencies(como se fosse um for)
         cada option tem uma key unica (nesse caso, o proprio valor da moeda) e o valor do option é a moeda (c)
         a moeda é exibida dentro do option com o mesmo valor do option
+        c é o item da lista currencies
 
 
     criando o select de moeda destino:
