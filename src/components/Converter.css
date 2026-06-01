@@ -1,3 +1,9 @@
+.box{
+    display: flex; /*exibe os elementos em linha ou coluna*/
+    flex-direction: column; /*alinha os elementos em coluna*/
+    align-items: center; /*alinha os itens ao centro*/  
+}
+
 .converter-box { /*classe*/
     /*borda*/
     padding: 30px;   /*espaço entre o conteudo e a borda*/
@@ -30,9 +36,9 @@ body{ /*elemento pai (tela)*/
     margin: 0; /*remove a margem padrão do body*/
 }
 
-input::-webkit-outer-spin-button,
+input::-webkit-outer-spin-button, /*removendo setas do input de quantidade */
 input::-webkit-inner-spin-button{
-    -webkit-appearance: nome;
+    -webkit-appearance: none;
     margin: 0;
 }
 
@@ -54,4 +60,7 @@ input::-webkit-inner-spin-button{
 .titulo{
     color: #000000;
     font-style: italic;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 10px;
 }

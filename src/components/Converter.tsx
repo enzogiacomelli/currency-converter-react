@@ -24,33 +24,36 @@ export default function Converter() {
     };
 
     return ( //tudo dentro do return é JSX(HTML + JS)
-        <div className="converter-box">
-            <h2 className="titulo">Conversor de Moedas</h2>
-            <input
-                className="input-amount"
-                type="number"
-                value={amount}
-                onChange={(e) => setAmount(Number(e.target.value))}
-            ></input>
+        <div className="box">
+            <div className="converter-box">
+                <h2 className="titulo">Conversor de Moedas</h2>
+                <input
+                    className="input-amount"
+                    type="number"
+                    value={amount}
+                    onChange={(e) => setAmount(Number(e.target.value))}
+                ></input>
 
-            <select className="select-currencies" value={fromCurrency} onChange={(e) => setFromCurrency(e.target.value)}>
-                {currencies.map((c) => (
-                    <option key={c} value={c}>{c}</option>
-                ))}
-            </select>
+                <select className="select-currencies" value={fromCurrency} onChange={(e) => setFromCurrency(e.target.value)}>
+                    {currencies.map((c) => (
+                        <option key={c} value={c}>{c}</option>
+                    ))}
+                </select>
 
-            <select className="select-currencies" value={toCurrency} onChange={(e) => setToCurrency(e.target.value)}>
-                {currencies.map((c) => (
-                    <option key={c} value={c}>
-                        {c}
-                    </option>
-                ))}
-            </select>
-            
-            <button onClick={convert}>Converter</button>
-            
-            <p>Resultado: {convertedAmount !== null ? convertedAmount.toFixed(2) : "0.00"}</p>
+                <select className="select-currencies" value={toCurrency} onChange={(e) => setToCurrency(e.target.value)}>
+                    {currencies.map((c) => (
+                        <option key={c} value={c}>
+                            {c}
+                        </option>
+                    ))}
+                </select>
 
+                <button onClick={convert}>Converter</button>
+
+                <p>Resultado: {convertedAmount !== null ? convertedAmount.toFixed(2) : "0.00"}</p>
+
+            </div>
+            <p>Dados consultados em https://api.exchangerate-api.com </p>
         </div>
     );
 }
